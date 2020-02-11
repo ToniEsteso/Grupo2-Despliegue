@@ -9,7 +9,7 @@ echo "<---------------Backend clonado--------------->"
 chmod -R 777 ./html/backend/
 if [ parametro = "preproduccion" ] || [ parametro = "Preproduccion" ] || [ parametro = "PREPRODUCCION" ]; then
     docker container run -d --name veganfood_backend -v /opt/veganfood/html/backend/Grupo2-Servidor:/var/www/html -p 10310:80 php:7.3-apache
-elif [ parametro = "produccion" ] || [ parametro = "produccion" ] || [ parametro = "PRODUCCION" ]; then
+elif [ parametro = "produccion" ] || [ parametro = "Produccion" ] || [ parametro = "PRODUCCION" ]; then
     docker container run -d --name veganfood_backend -v /opt/veganfood/html/backend/Grupo2-Servidor:/var/www/html --expose 80 -e VIRTUAL_HOST=www.api.veganfood.pve2.fpmislata.com -e LETSENCRYPT_HOST=www.api.veganfood.pve2.fpmislata.com --net "nginx-net" php:7.3-apache
 fi
 docker exec -it veganfood_backend a2enmod rewrite
