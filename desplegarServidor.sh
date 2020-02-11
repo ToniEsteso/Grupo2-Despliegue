@@ -1,5 +1,5 @@
 #!usr/env/bin bash
-parametro = 1
+parametro=$1
 docker container stop veganfood_backend
 docker container rm veganfood_backend
 rm -rf ./html/backend/Grupo2-Servidor
