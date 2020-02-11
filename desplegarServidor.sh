@@ -1,5 +1,8 @@
 #!usr/env/bin bash
 parametro=$1
+echo "PARAMETRO"
+echo parametro
+echo "PARAMETRO"
 docker container stop veganfood_backend
 docker container rm veganfood_backend
 rm -rf ./html/backend/Grupo2-Servidor
