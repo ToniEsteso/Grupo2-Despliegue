@@ -1,4 +1,5 @@
 parametro=$1
+rm ./veganfood
 git clone https://github.com/ToniEsteso/veganfood.git 
 cd ./veganfood
 mkdir ./html ./html/frontend ./html/backend ./mysql
