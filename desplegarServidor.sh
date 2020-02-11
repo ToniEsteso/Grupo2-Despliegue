@@ -1,7 +1,7 @@
 #!usr/env/bin bash
 parametro=$1
 echo "PARAMETRO"
-echo parametro
+echo $parametro
 echo "PARAMETRO"
 docker container stop veganfood_backend
 docker container rm veganfood_backend
@@ -10,9 +10,9 @@ mkdir -p ./html/backend/Grupo2-Servidor
 git clone -b develop https://github.com/ToniEsteso/Grupo2-Servidor.git ./html/backend/Grupo2-Servidor
 echo "<---------------Backend clonado--------------->"
 chmod -R 777 ./html/backend/
-if [ parametro = "preproduccion" ] || [ parametro = "Preproduccion" ] || [ parametro = "PREPRODUCCION" ]; then
+if [ $parametro = "preproduccion" ] || [ $parametro = "Preproduccion" ] || [ $parametro = "PREPRODUCCION" ]; then
     docker container run -d --name veganfood_backend -v /opt/veganfood/html/backend/Grupo2-Servidor:/var/www/html -p 10310:80 php:7.3-apache
-elif [ parametro = "produccion" ] || [ parametro = "Produccion" ] || [ parametro = "PRODUCCION" ]; then
+elif [ $parametro = "produccion" ] || [ $parametro = "Produccion" ] || [ $parametro = "PRODUCCION" ]; then
     echo "ENTRADO"
     docker container run -d --name veganfood_backend -v /opt/veganfood/html/backend/Grupo2-Servidor:/var/www/html --expose 80 -e VIRTUAL_HOST=www.api.veganfood.pve2.fpmislata.com -e LETSENCRYPT_HOST=www.api.veganfood.pve2.fpmislata.com --net "nginx-net" php:7.3-apache
 fi
