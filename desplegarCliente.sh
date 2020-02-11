@@ -4,7 +4,11 @@ docker container stop veganfood_frontend
 docker container rm veganfood_frontend
 rm -rf ./html/frontend/
 mkdir -p ./html/frontend/Grupo2-Cliente
-git clone https://github.com/ToniEsteso/Grupo2-Cliente.git ./html/frontend/Grupo2-Cliente
+if [ $parametro = "preproduccion" ] || [ $parametro = "Preproduccion" ] || [ $parametro = "PREPRODUCCION" ]; then
+    git clone -b develop https://github.com/ToniEsteso/Grupo2-Cliente.git ./html/frontend/Grupo2-Cliente
+elif [ $parametro = "produccion" ] || [ $parametro = "produccion" ] || [ $parametro = "PRODUCCION" ]; then
+    git clone https://github.com/ToniEsteso/Grupo2-Cliente.git ./html/frontend/Grupo2-Cliente
+fi
 echo "<---------------Frontend clonado--------------->"
 chmod -R 777 ./html/frontend/
 rm -rf ./html/frontend/Grupo2-Cliente/node_modules

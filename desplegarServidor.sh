@@ -8,6 +8,11 @@ docker container rm veganfood_backend
 rm -rf ./html/backend/Grupo2-Servidor
 mkdir -p ./html/backend/Grupo2-Servidor
 git clone -b develop https://github.com/ToniEsteso/Grupo2-Servidor.git ./html/backend/Grupo2-Servidor
+if [ $parametro = "preproduccion" ] || [ $parametro = "Preproduccion" ] || [ $parametro = "PREPRODUCCION" ]; then
+    git clone -b develop https://github.com/ToniEsteso/Grupo2-Servidor.git ./html/backend/Grupo2-Servidor
+elif [ $parametro = "produccion" ] || [ $parametro = "produccion" ] || [ $parametro = "PRODUCCION" ]; then
+    git clone https://github.com/ToniEsteso/Grupo2-Servidor.git ./html/backend/Grupo2-Servidor
+fi
 echo "<---------------Backend clonado--------------->"
 chmod -R 777 ./html/backend/
 if [ $parametro = "preproduccion" ] || [ $parametro = "Preproduccion" ] || [ $parametro = "PREPRODUCCION" ]; then
