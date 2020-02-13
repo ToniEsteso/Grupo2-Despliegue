@@ -14,6 +14,7 @@ chmod -R 777 ./html/frontend/
 rm -rf ./html/frontend/Grupo2-Cliente/node_modules
 npm install --prefix ./html/frontend/Grupo2-Cliente/
 npm run build --prefix ./html/frontend/Grupo2-Cliente/
+mkdir ./html/frontend/web
 cp -R ./html/frontend/Grupo2-Cliente/dist/* ./html/frontend/web
 cp ./html/frontend/Grupo2-Cliente/dist/.* ./html/frontend/web
 rm -rf ./html/frontend/Grupo2-Cliente
