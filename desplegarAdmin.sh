@@ -1,7 +1,7 @@
 #!usr/env/bin bash
 parametro=$1
-docker container stop veganfood_frontend
-docker container rm veganfood_frontend
+docker container stop veganfood_admin
+docker container rm veganfood_admin
 rm -rf ./html/frontend/admin
 mkdir -p ./html/frontend/admin
 if [ $parametro = "preproduccion" ] || [ $parametro = "Preproduccion" ] || [ $parametro = "PREPRODUCCION" ]; then
