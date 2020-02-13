@@ -13,6 +13,7 @@ echo "<---------------Frontend clonado--------------->"
 chmod -R 777 ./html/frontend/
 rm -rf ./html/frontend/Grupo2-Cliente/node_modules
 npm install --prefix ./html/frontend/Grupo2-Cliente/
+chmod -R 777 ./html/frontend/
 npm run build --prefix ./html/frontend/Grupo2-Cliente/
 mkdir ./html/frontend/web
 cp -R ./html/frontend/Grupo2-Cliente/dist/* ./html/frontend/web
